@@ -1,0 +1,34 @@
+what is redux?
+redux is a predictable state container javaSript application
+
+first principle : the state of your whole application is stored in an object tree within a single store.
+second principle : the only way to change the state is to emit an action, object describing what to do.
+third principle : to specify how state tree is transformed, we define a pure reducer.
+
+// Creating Action //
+
+const BuyCake = "Buying_Cake";
+function buyCake(){
+return {
+type: BuyCake,
+info: "first redux action"
+}
+}
+
+// creating reducers //
+
+const initialState = {
+numberOfCakes = 10
+}
+
+const reducer = (state=initialState, action) => {
+switch(action.type){
+ 
+case BuyCake: return{
+...state,
+numberOfcakes = state.numberOfCakes-1,
+}
+default : return state
+
+}
+}
