@@ -18,7 +18,7 @@ info: "first redux action"
 // creating reducers //
 
 const initialState = {
-numberOfCakes = 10
+numberOfCakes : 10
 }
 
 const reducer = (state=initialState, action) => {
@@ -26,9 +26,19 @@ switch(action.type){
  
 case BuyCake: return{
 ...state,
-numberOfcakes = state.numberOfCakes-1,
+numberOfcakes : state.numberOfCakes-1,
 }
 default : return state
 
 }
 }
+
+
+//creating store
+const store = createStore(reducer)
+console.log('initial state', store.getState()) //get state to get a state
+
+const unsubscribe = store.subscribe(() => console.log("updated state:", store.getState()))//listener using subscribe
+store.dispatch(buycake()) // dispatch to implement action
+
+unsubscribe()
