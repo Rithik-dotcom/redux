@@ -1,5 +1,5 @@
 what is redux?
-redux is a predictable state container javaSript application
+redux is a predictable state container for javaSript application
 
 first principle : the state of your whole application is stored in an object tree within a single store.
 second principle : the only way to change the state is to emit an action, object describing what to do.
